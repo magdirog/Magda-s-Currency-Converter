@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Magda's report</title>
+        <link href="layout.css" rel="stylesheet" type="text/css"/> 
+<style type="text/css">
+<!--
+body {
+	background-color: #CCC;
+	margin-top: 0px;
+}
+-->
+</style></head>
+    
+    <body>
+    <div id="wr2">
+     
+      <h1 class="hdr">WWW Technologies</h1>
+        <div id="project2">project2
+      </div>
+  
+        
+      
+        <p>
+       
+        &nbsp;The basic functionality of the convertion application is done in the 
+        converter.java file where is the servlet code for that.</br>
+        In fact i get the live currencies from Google which also does the convertion.</br>
+        
+        In details,after taking the user's input for the amount,the to-selection and the 
+        from-selection(index.html file) with the request.getParameter() command,</br>
+        i insert
+        them to the GET request,that has the following form:</br>
+        http://www.google.com/ig/calculator?hl=en&q=
+        <AMOUNT><FROM_CURRENCY>=?<TO_CURRENCY></br>
+         
+            </br>
+                    
+        /* Example that returns the value of 100 Euro in United States Dollars */</br>
+            http://www.google.com/ig/calculator?hl=en&q=100EUR=?USD</br>
+          
+            </br>
+
+        /* Response */</br>
+            {lhs: "100 Euros",rhs: "137.27 U.S. dollars",error: "",icc: true}</br>
+            </br>
+                 
+          <br>
+          <br>
+          &nbsp;Then i open a stream and i read the line of the response from Google that has the form
+      that you can see above. </br>
+        
+        So i split the response-string into tokens and i save the tokens that represent the
+        result into a new string variable(str).</br>
+       At last, i redirect to the result.jsp page using response.sendRedirect(str).</p>
+       <p>
+           &nbsp;The functionality of downloading the source code is done in the CodeServlet.java
+           file where is the servlet code that implements that.</br>
+           I wrote the code following exactly the way that is represented in 
+           Chapter 4(Being a Servlet)of the book(Head First Servlets and JSP,2nd Edition),page 163.</br>
+         <br>
+         <br>
+         &nbsp;At last,this Web Application has report button.By clicking on that you go to the report page</br>
+           where is the description of the implementation of this Web App(is the page you're reading now...!!!).<br>
+           <br>
+         &nbsp;The report-implementation has been done using Listener.For this i created 3 classes and i added</br>
+           some code lines in the DD(web.xml).</br>
+           
+          </p>
+       <p><strong>1.The ServletContextListener </strong></br>
+          ReportServletListener.java</br></br>
+          This class listens for the two key events in the Servlet's life,initialization and destruction.</br>
+          In details,this class gets the context init parameter(in my case this is the context parameter:report),</br>
+          creates the MyReport(see below)object and sets the MyReport as the context attribute.</br>
+          </br>
+      </p>
+       <p><strong>2.The attribute class</strong></br>
+          MyReport.java</br></br>
+          This is just a plain old Java class.   
+          Its job is to be the attribute value that the ServletContextListener instantiates </br> and sets in
+          theServletContext, for the servlet to retrieve.</br>
+       </p>
+       <p>
+         <strong>3.The servlet</br>
+         </strong>ReportServlet.java</br></br>
+         In this class i get the MyReport attribute from the context and invoke getReport() method.</br>
+          By this the value of the context parameter is returned as a String.</br>
+          I save that in a variable of type String (s) and use this variable as the parameter in the command</br>
+          request.getRequestDispathcher(s)</br>
+          With these commands</br></br>
+          RequestDispatcher view = request.getRequestDispatcher(s);</br>
+          view.forward(request, response);</br></br>
+          
+          i redirect to the report.html page.</br>
+          </br>
+          
+       </p>
+          
+          <p>
+          <h3>Deployment</h3>
+          
+          
+          In order for the listener to work i added in the DD a context parameter.</br>
+          name:report</br>
+          value:report.html</br>
+          </br>
+          </br>
+          
+
+          </p>
+       
+        
+       
+        
+        
+                    
+                    
+                    
+                    
+                    
+      
+                   
+                   
+        
+        
+   
+    
+        
+        
+   
+    </div>
+    </body>
+    
+    
+</html>

@@ -1,0 +1,72 @@
+#lbl {
+	float: left;
+	width: 60px;
+	text-align: right;
+}
+#wraper {
+	width: 430px;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	-moz-box-shadow:0px 0px 4px #000;
+	-webkit-box-shadow: 0px 0px 4px #000;
+	box-shadow: 0px 0px 4px #000;
+	padding: 25px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	color: #000;
+	font-weight: bold;
+	background-color: #F4F4F4;
+}
+.amnt {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: medium;
+	color: #000;
+}
+#wr2 {
+	width: 840px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	background-color: #FFF;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 10px;
+	padding-right: 30px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	-moz-box-shadow:0px 0px 4px #000;
+	-webkit-box-shadow: 0px 0px 4px #000;
+	box-shadow: 0px 0px 4px #000;
+}
+#project2 {
+	color: #FFF;
+	background-color: #1A86B5;
+	width: 860px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: large;
+	padding: 5px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#btnconvert {
+	width: 60px;
+	margin-left: 200px;
+}
+.getcode {
+	font-size: medium;
+	color: #099;
+	width: 200px;
+}
+#lbl2 {
+	float: left;
+	width: 220px;
+	text-align: left;
+}
+
+
+.hdr {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: x-large;
+	color: #1A86B5;
+}
